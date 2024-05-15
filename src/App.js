@@ -1,29 +1,41 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import styles from './App.module.css';
 import Playlist from './components/Playlist';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Track from './components/Track';
 import Tracklist from './components/Tracklist';
 
-function App() {
+function App () {
+  const [searchResults, setSearchResults] = useState([
+    {
+      id: 1,
+      name: 'Track-name 1',
+      artist: 'Track-name 1 artist',
+      album: 'Track-name 1 album'
+    },
+    {
+      id: 2,
+      name: 'Track-name 2',
+      artist: 'Track-name 2 artist',
+      album: 'Track-name 2 album'
+    }
+  ]);
 
   return (
     <div>
       <h1>
-        Ja<span className="highlight">mmm</span>ing
+        Ja<span className={styles.highlight}>mmm</span>ing
       </h1>
-      <div className="App">
-        <SearchBar onSearch={search} />
-        <div className="App-playlist">
-          <SearchResults searchResults={searchResults} onAdd={addTrack} />
-          <Playlist
-            playlistName={playlistName}
-            playlistTracks={playlistTracks}
-            onNameChange={updatePlaylistName}
-            onRemove={removeTrack}
-            onSave={savePlaylist}
-          />
-        </div>  
+      <div className={styles.App}>
+        {/* <!-- Add a SearchBar component --> */}
+        
+        <div className={styles['App-playlist']}>
+          {/* <!-- Add a SearchResults component --> */}
+          <SearchResults userSearchResults={searchResults}/>
+
+          {/* <!-- Add a Playlist component --> */}
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
-import React from "react";
+import React from 'react';
+import styles from '../styles/SearchResults.module.css';
+import Tracklist from './Tracklist';
 
-const SearchResults = () => {
+const SearchResults = (props) => {
   return (
-    <div className="SearchResults">
-      <h2>Results</h2>
-      <TrackList tracks={props.searchResults} onAdd={props.onAdd} />
+    <div className={styles.SearchResults}>
+      {/* <!-- Add a Tracklist component --> */}
+      <Tracklist userSearchResults={props.userSearchResults}/>
     </div>
   );
 };

@@ -1,17 +1,13 @@
-import React from "react";
+import React from 'react';
+import styles from '../styles/Playlist.module.css';
 
 const Playlist = () => {
   return (
-    <div className="Playlist">
-      <input onChange={handleNameChange} defaultValue={"New Playlist"} />
-      <TrackList
-        tracks={props.playlistTracks}
-        isRemoval={true}
-        onRemove={props.onRemove}
-      />
-      <button className="Playlist-save" onClick={props.onSave}>
-        SAVE TO SPOTIFY
-      </button>
+    <div className={styles.Playlist}>
+      <input defaultValue={"New Playlist"} />
+      {/* <!-- Add a TrackList component --> */}
+
+      <button className={styles['Playlist-save']}>Save to Spotify</button>
     </div>
   );
 };

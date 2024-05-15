@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
+import styles from '../styles/SearchBar.module.css';
 
 const SearchBar = () => {
   return (
-    <div className="SearchBar">
-      <input placeholder="Enter A Song Title" onChange={handleTermChange} />
-      <button className="SearchButton" onClick={search}>
-        SEARCH
+    <div className={styles.SearchBar}>
+      <input placeholder="Enter A Song, Album, or Artist"/>
+
+      <button className={styles.SearchButton}>
+        Search
       </button>
     </div>
   );
