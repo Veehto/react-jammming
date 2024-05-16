@@ -2,8 +2,20 @@ import React from 'react';
 import styles from '../styles/Track.module.css';
 
 const Track = (props) => {
-  const renderButtonAction = () => {
-    return (<button className={styles['Track-action']}>{props.isRemoval ? '-' : '+'}</button>);
+  const renderActionButton = () => {
+    if (props.isRemoval) {
+      return <button className={styles['Track-action']} onClick={passTrackToRemove}>-</button>
+    } else {
+      return <button className={styles['Track-action']} onClick={passTrack}>+</button>
+    }
+  };
+
+  const passTrack = () => {
+    props.onAdd(props.track);
+  };
+
+  const passTrackToRemove = () => {
+    props.onRemove(props.track);
   };
 
   return (
@@ -17,6 +29,7 @@ const Track = (props) => {
       </div>
       
       {/* <button class="Track-action"><!-- + or - will go here --></button> */}
+      {renderActionButton()}
     </div>
   );
 };
