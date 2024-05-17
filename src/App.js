@@ -38,7 +38,7 @@ function App () {
     },
   ]);
   
-  // Revision these function later:
+  // Revision these function later, depends on your time idk:
   const addTrack = (track) => {
     const existingTrack = playlistTracks.find((selected) => selected.id === track.id);
     const newTrack = playlistTracks.concat(track);
@@ -51,6 +51,18 @@ function App () {
     setPlaylistTracks(existingTrack);
   };
 
+  const updatePlaylistName = (name) => {
+    setPlaylistName(name);
+  };
+
+  const savePlaylist = () => {
+    const trackURIs = playlistTracks.map((song) => song.uri)
+  };
+
+  const search = (term) => {
+    console.log(term);
+  };
+
   return (
     <div>
       <h1>
@@ -58,6 +70,7 @@ function App () {
       </h1>
       <div className={styles.App}>
         {/* <!-- Add a SearchBar component --> */}
+        <SearchBar onSearch={search}/>
         
         <div className={styles['App-playlist']}>
           {/* <!-- Add a SearchResults component --> */}
@@ -71,6 +84,8 @@ function App () {
             playlistName={playlistName} 
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
+            onNameChange={updatePlaylistName}
+            onSave={savePlaylist}
           />
         </div>
       </div>
