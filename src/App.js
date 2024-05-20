@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Track from './components/Track';
 import Tracklist from './components/Tracklist';
+import { Spotify } from './util/Spotify/Spotify';
 
 function App () {
   const [searchResults, setSearchResults] = useState([
@@ -60,6 +61,7 @@ function App () {
   };
 
   const search = (term) => {
+    Spotify.search(term).then((result) => setSearchResults(result));
     console.log(term);
   };
 
