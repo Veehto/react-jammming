@@ -33,7 +33,8 @@ const Spotify = {
     const accessToken = Spotify.getAccessToken();
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     }).then(response => {
       return response.json();
@@ -55,7 +56,7 @@ const Spotify = {
       return;
     }
     const accessToken = Spotify.getAccessToken();
-    const header = {Authorization: `Bearer ${accessToken}`};
+    const header = {Authorization: `Bearer ${accessToken}`, "Content-Type": "application/x-www-form-urlencoded"};
     let userID;
 
     return fetch(`https://api.spotify.com/v1/me`, {headers: header}

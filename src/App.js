@@ -3,41 +3,13 @@ import styles from './App.module.css';
 import Playlist from './components/Playlist';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
-import Track from './components/Track';
-import Tracklist from './components/Tracklist';
 import { Spotify } from './util/Spotify/Spotify';
 
 function App () {
-  const [searchResults, setSearchResults] = useState([
-    {
-      id: 1,
-      name: 'Track-name 1',
-      artist: 'Track-artist 1',
-      album: 'Track-album 1'
-    },
-    {
-      id: 2,
-      name: 'Track-name 2',
-      artist: 'Track-artist 2',
-      album: 'Track-album 2'
-    }
-  ]);
+  const [searchResults, setSearchResults] = useState([]);
 
-  const [playlistName, setPlaylistName] = useState('Example-Playlist name');
-  const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      id: 3,
-      name: 'Track in Playlist Name 3',
-      artist: 'Track-name 3 artist',
-      album: 'Track-name 3 album'
-    },
-    {
-      id: 4,
-      name: 'Track in Playlist 4',
-      artist: 'Track-name 4 artist',
-      album: 'Track-name 4 album'
-    },
-  ]);
+  const [playlistName, setPlaylistName] = useState('Custom Playlist');
+  const [playlistTracks, setPlaylistTracks] = useState([]);
   
   // Revision these function later, depends on your time idk:
   const addTrack = (track) => {
