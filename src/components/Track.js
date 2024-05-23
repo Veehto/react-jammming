@@ -20,12 +20,14 @@ const Track = (props) => {
 
   return (
     <div className={styles.Track}>
+      <img src={props.track.imageUri} style={{height: 64, width: 64}} />
       <div className={styles['Track-information']}>
-        {/* <h3><!-- track name will go here --></h3> */}
-        <h3>{props.track.name}</h3>
-
-        {/* <p><!-- track artist will go here--> | <!-- track album will go here --></p> */}
-        <p>{props.track.artist} | {props.track.album}</p>
+        <div>
+            {/* <h3><!-- track name will go here --></h3> */}
+            <h3>{props.track.name}</h3>
+            {/* <p><!-- track artist will go here--> | <!-- track album will go here --></p> */}
+            <p>{props.track.artist} | {props.track.album}</p>
+        </div>
       </div>
       
       {/* <button class="Track-action"><!-- + or - will go here --></button> */}
