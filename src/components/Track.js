@@ -20,7 +20,7 @@ const Track = (props) => {
 
   return (
     <div className={styles.Track}>
-      <img src={props.track.imageUri} style={{height: 64, width: 64}} />
+      <img src={props.track.imageUri} style={{height: 64, width: 64}} alt='Track album cover' />
       <div className={styles['Track-information']}>
         <div>
             {/* <h3><!-- track name will go here --></h3> */}
